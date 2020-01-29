@@ -1,0 +1,109 @@
+<!--Navbar component goes here-->
+<!-- <div *ngIf="notOnPayment"> -->
+
+<div *ngIf="isLoggedIn(); then ifBlock; else elseBlock"></div>
+
+<ng-template #ifBlock>
+  <app-navbar></app-navbar>
+</ng-template>
+
+<ng-template #elseBlock>
+  <app-logged-in-navbar></app-logged-in-navbar>
+</ng-template>
+
+<!-- </div> -->
+
+<!-- <router-outlet></router-outlet> -->
+<!-- Routed components go here -->
+
+<!--Footer 1.0-->
+<!-- <div class="f1">
+  <footer class="container py-5" id="footer">
+    <div class="row">
+      <div class="col-12 col-md">
+        <span class="link">Custom Image</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2 link" role="img" viewBox="0 0 24 24" focusable="false"><title class="link">Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+        <small class="d-block mb-3 text-muted"><span class="link">&copy; Shopper-Zoid 2017-2019</span></small> 
+      </div>
+      
+      <div class="col-6 col-md">
+        <h5 class="link">Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#"><span class="link">Cool stuff</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Random feature</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Team feature</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Stuff for developers</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Another one</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Last time</span></a></li>
+        </ul>
+      </div>
+      
+      <div class="col-6 col-md">
+        <h5 class="link">Social Media</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#"><span class="link">Facebook</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">LinkedIn</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Twitter</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Instagram</span></a></li>
+        </ul>
+      </div>
+      
+      <div class="col-6 col-md">
+        <h5 class="link">Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" routerLink="/seller-registration"><span class="link">Register as Partner</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Education</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Government</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Gaming</span></a></li>
+        </ul>
+      </div>
+      
+      <div class="col-6 col-md">
+        <h5 class="link">About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#"><span class="link">Team</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Locations</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Privacy</span></a></li>
+          <li><a class="text-muted" href="#"><span class="link">Terms</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div> -->
+
+
+<!--Footer 2.0-->
+<section class="super_container">
+
+  <router-outlet></router-outlet>
+  <!-- Routed components go here -->
+
+  <div class="footer_overlay"></div>
+  
+  <footer class="footer">
+    <div class="footer_background"></div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
+            <div class="footer_logo"><a href="#">Shopper-Zoid.</a></div>
+            
+            <div class="copyright ml-auto mr-auto">
+              Copyright &copy;2019 All rights reserved 
+            </div>
+            
+            <div class="footer_social ml-lg-auto">
+              <ul>
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--div of .container end-->
+  </footer>
+</section>

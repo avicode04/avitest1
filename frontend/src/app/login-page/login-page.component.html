@@ -1,0 +1,56 @@
+<section class="container register mt-5">
+    <div class="row">
+        <div class="col-lg register-left">
+            <img src="assets/seller-registration/logo3.png" alt="logo" />
+            <h3>Welcome</h3>
+        </div>
+
+        <div class="col-md-9 register-right">
+            <div class="wrapper fadeInDown">
+                <h3>Please provide your login credentials.</h3>
+                <div id="formContent">
+                    <!-- Tabs Titles -->
+
+                    <!-- Icon -->
+                    <div class="fadeIn first">
+                        <img src="https://capenetworks.com/static/images/testimonials/user-icon.svg" id="icon" alt="User Icon" style="width: 30%;height: 30%;" />
+                    </div>
+
+                    <!-- Login Form -->
+                    <form (ngSubmit)="checkLogin()" [formGroup]="loginForm">
+                        <!--Email Input Field-->
+                        <input type="email" #email class="form-control fadeIn second" name="Email" [formControlName]="'Email'" [ngClass]="{'is-invalid':loginForm.get('Email').touched && loginForm.get('Email').invalid}" placeholder="Email">
+                        <!--Invalid Email Input Field Messages-->
+                        <div *ngIf="loginForm.get('Email').touched && loginForm.get('Email').invalid" class="invalid-feedback">
+                            <div *ngIf="loginForm.get('Email').errors.required">An email is required...</div>
+                            <div *ngIf="loginForm.get('Email').errors.email">The email should be a valid email address...</div>
+                        </div>
+                        <!--Password Input Field-->
+                        <input type="password" #password class="form-control fadeIn third" name="Password" [formControlName]="'Password'" [ngClass]="{'is-invalid':loginForm.get('Password').touched && loginForm.get('Password').invalid}" placeholder="Password">
+                        <!--Invalid Password Input Field Messages-->
+                        <div *ngIf="loginForm.get('Password').touched && loginForm.get('Password').invalid" class="invalid-feedback">
+                            <div *ngIf="loginForm.get('Password').errors.required">A password is required...</div>
+                            <div *ngIf="loginForm.get('Password').errors.minlength">The password must be at least 8 characters long...</div>
+                            <div *ngIf="loginForm.get('Password').errors.maxlength">The password must be at most 16 characters long...</div>
+                        </div>
+                        <!--Log In Field (NOT A BUTTON)-->
+                        <input type="submit" class="fadeIn fourth" value="Log In" />
+                    </form>
+                     <!--Error message if user is not valid-->
+                     <div *ngIf="notRegistered">
+                        <h5>It seems you're not registered. Please provide valid login credentials or register.</h5>
+                    </div>
+                    <!-- New User Registration Reminder Anchor-Tag Container -->
+                    <div id="formFooter">
+                        <a class="underlineHover" routerLink="/buyer-registration">New User ? Register now</a>
+                    </div>
+                </div>
+                <!--#'formContent' div -- End-->
+            </div>
+            <!--.'wrapper fadeInDown' div -- End-->
+        </div>
+        <!--.'col-md-9 register-right' div -- End-->
+    </div>
+    <!--.'row' div -- End-->
+</section>
+<!--.'container register mt-5' section -- End-->

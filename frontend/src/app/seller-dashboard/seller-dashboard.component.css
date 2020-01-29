@@ -1,0 +1,206 @@
+.navbar-light {
+    background-color: whitesmoke;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    margin-top: 6rem;
+    z-index: 100;
+}
+
+.form-button-hint {
+    font-size: 10px;
+}
+
+h4 {
+    color: rgb(59, 58, 58);
+}
+
+img {
+    border: 2px solid grey;
+}
+
+h5 {
+    /* color: black; */
+    color:rgb(5, 99, 143);
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.container {
+    background: whitesmoke;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /* background-size: cover; */
+    color: black;
+    margin-top: 0rem;
+}
+
+.card-title{
+    text-align: center;
+    /* color: black; */
+    color:rgb(5, 99, 143);
+}
+
+.head{ 
+    background: url("src/assets/seller-dashboard/head.png"); 
+    /* background: url("src/assets/seller-dashboard/stephen-dawson-qwtCeJ5cLYs-unsplash.jpg"); */
+    /* background: url("src/assets/seller-dashboard/carlos-muza-hpjSkU2UYSU-unsplash.jpg"); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-position: 50% 50%; */
+    min-height: 27vh; 
+    max-width: 100%;
+    display: flex; 
+    /* align-items: flex-end; 
+    justify-content: flex-end;  */
+} 
+
+.number{
+    text-align: center;
+    color:rgb(5, 99, 143);
+    font-size: 30px;
+}
+
+.check{ 
+    background: url("src/assets/seller-dashboard/800px_COLOURBOX5699146.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 25rem; 
+    max-height:100% ;
+    max-width: 100%; 
+} 
+
+.card {
+    padding-bottom: 6rem;
+    /* border: 2px solid grey; */
+}
+
+.card-deck{
+    background: #f5f6f7;
+    margin-bottom: -2rem;
+    padding-bottom: 6rem;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.card-block {
+    padding: 5px;
+}
+
+/************
+1. 2560px
+************/
+@media only screen and (max-width: 2560px)
+{
+	#wrapper {
+        margin-top: 5%;
+        /* background: -webkit-linear-gradient(left, #4eec64, #d5f154e8); */
+        background-image: url("src/assets/home/footer.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+        margin-bottom: -3%;
+    }
+    #page-content-wrapper {
+        margin-bottom: 4%;
+    }
+}
+
+/************
+2. 1440px
+************/
+@media only screen and (max-width: 1440px)
+{
+	#wrapper {
+        margin-top: 7%;
+        /* background: -webkit-linear-gradient(left, #4eec64, #d5f154e8); */
+        background-image: url("src/assets/home/footer.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+        margin-bottom: -8%;
+    }
+    #page-content-wrapper {
+        margin-bottom: 4%;
+    }
+}
+
+/************
+3. 1024px
+************/
+@media only screen and (max-width: 1024px)
+{
+	#wrapper {
+        margin-top: 13%;
+        /* background: -webkit-linear-gradient(left, #4eec64, #d5f154e8); */
+        background-image: url("src/assets/home/footer.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+        margin-bottom: -9%;
+    }
+    #page-content-wrapper {
+        margin-bottom: 4%;
+    }
+}
+
+/************
+4. 768px
+************/
+@media only screen and (min-width: 768px)
+{
+    nav{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+	#wrapper {
+        margin-top: 17%;
+        /* background: -webkit-linear-gradient(left, #4eec64, #d5f154e8); */
+        background-image: url("src/assets/home/footer.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+        margin-bottom: -23%;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-showmore {
+        max-width: 30%;
+    }
+    #page-content-wrapper {
+        margin-bottom: 2%;
+    }
+}
+
+/************
+5. 425px
+************/
+@media only screen and (max-width: 425px)
+{
+	#wrapper {
+        margin-top: 17%;
+        /* background: -webkit-linear-gradient(left, #4eec64, #d5f154e8); */
+        background-image: url("src/assets/home/footer.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+        margin-bottom: -40%;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-showmore {
+        max-width: 30%;
+    }
+    #page-content-wrapper {
+        margin-bottom: 2%;
+    }
+}

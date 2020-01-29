@@ -1,0 +1,33 @@
+<section>
+    <div class="trending-heading">
+        <h1>Trending deals</h1>
+    </div>
+
+    <div class="deals" ng2-carouselamos [width]="1000" [items]="products" [$item]="itemTemplate" [$prev]="prevTemplate" [$next]="nextTemplate" (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index"></div>
+
+    <ng-template #prevTemplate>
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="fa fa-chevron-left"></span>
+        </button>
+    </ng-template>
+
+    <ng-template #nextTemplate>
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="fa fa-chevron-right"></span>
+        </button>
+    </ng-template>
+
+    <ng-template let-item let-i="index" #itemTemplate>
+        <div style="min-width: 300px; min-height: 300px; background-color: rgb(150, 247, 126);">
+            <div class="card mb-5" style="width: 14rem; height: 39rem;">
+                <!-- <img style="background-color:rgb(180, 236, 147) ;" [src]="item.image" class="card-img-top img-thumbnail" alt="shooperZoid"> -->
+                <img style="background-color:rgb(150, 247, 126);" src="https://cdn.opstatics.com/store/20170907/assets/images/events/2019/08/hotdog/18865/common/blue-v.webp" class="card-img-top img-thumbnail" alt="shooperZoid">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</section>

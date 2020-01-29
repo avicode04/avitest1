@@ -1,0 +1,43 @@
+/* .container py-5 {
+    background-color: coral;
+}
+
+.f1 {
+    background-color: rgb(80, 80, 5);
+}
+
+#reg, #log {
+    background-color: #d8860be8;
+}
+
+.link {
+    color: white;
+} */
+
+.footer_background {
+    background-image: url("src/assets/home/footer.jpg");
+}
+
+/************
+1. 425px
+************/
+
+@media only screen and (max-width: 425px)
+{
+	.container {
+        padding-top: 14%;
+        padding-bottom: 2%;
+    }
+}
+
+/************
+2. 768px
+************/
+
+@media only screen and (max-width: 768px)
+{
+	.container {
+        padding-top: 6%;
+        padding-bottom: 2%;
+    }
+}

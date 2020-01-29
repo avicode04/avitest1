@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "productName": "Kitty Cat",
+      "productDescription": "A very cute & quiet kitty cat. It will surely make you smile everyday!",
+      "productPrice": "1000"
+    },
+    {
+      "productName": "Kitty Catty Cat",
+      "productDescription": "A very cute & quiet kitty catty cat. It will surely make you smile everyday!",
+      "productPrice": "2000"
+    }
+  ],
+  "cart": [
+    
+  ],
+  "wishlist": [
+    
+  ]
+}

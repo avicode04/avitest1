@@ -1,0 +1,198 @@
+<div class="d-flex" id="wrapper">
+
+    <!--Seller Dashboard mini-navbar-->
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Account Setting </div>
+        
+        <div class="list-group list-group-flush">
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Home</a>
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Catalogue</a>
+            <a (click)="goToInventory()" class="list-group-item list-group-item-action bg-light">Inventory</a>
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Pricing</a>
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Orders</a>
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Performance</a>
+            <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Help</a>
+            <a routerLink="login-page" class="list-group-item list-group-item-action bg-light">Logout</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Catalogue</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" (click)="goToInventory()" data-toggle="collapse" data-target=".navbar-collapse.show">Inventory</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Performance</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="seller-dashboard" data-toggle="collapse" data-target=".navbar-collapse.show">Help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="login-page" data-toggle="collapse" data-target=".navbar-collapse.show">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Seller Dashboard mini-navbar -- End-->
+
+        <!--Seller Dashboard Home View-->
+        <div class="head"></div>
+
+        <section class="container">
+            <section class="row" style="padding-top: 2rem; padding-bottom: 2rem; 
+            display: flex; align-items: center; font-family: sans-serif;">
+                <h4 class="text-center w-responsive mx-auto">
+                Welcome {{seller.sellerName}}<br>Your registered E-Mail Id is: 
+                {{seller.sellerEmail}}<br><span *ngIf="init">Your registered GSTIN 
+                is: {{seller.sellerGstIn}}<br>Your registered contact is: 
+                {{seller.sellerPhone}}<br>Your registered address is: 
+                {{seller.sellerAddress}}</span></h4>
+            </section>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-deck">
+                        <!--Foundation-->
+                        <div class="card">
+                            <div class="card-block">
+                                <h2 class="number">1.</h2>
+                                <h3 class="card-title">ADD A PRODUCT</h3>
+                            </div>
+                            
+                            <img src="assets/seller-dashboard/th27-ecommerce.jpeg" 
+                            alt="Add a product" style="width: 100%;height: 60%;" />
+                            
+                            <div class="card-block wrapper">
+                                <h5>You can add information about a product such as 
+                                its price, variants, and availability from the Inventory 
+                                page in the sidebar.
+                                </h5>
+                            </div>
+                        </div>
+                        <!--Foundation end-->
+
+                        <!--HTML and CSS-->
+                        <div class="card">
+                            <div class="card-block">
+                                <h2 class="number">2.</h2>
+                                <h3 class="card-title">ENTER PRODUCT DETAILS</h3>
+                            </div>
+                            
+                            <img src="assets/seller-dashboard/Benefits-of-selling-products-online-in-India-800x445.jpg" alt="Enter details"style="width: 100%;height: 60%;" >
+                            
+                            <div class="card-block wrapper">
+                                <h5>You can add information about a product such as its 
+                                price, variants, and availability from the Inventory page 
+                                in the sidebar.</h5>
+                            </div>
+                        </div>
+                        <!--HTML and CSS end-->
+
+                        <!--Angular JS-->
+                        <div class="card">
+                            <div class="card-block">
+                                <h2 class="number">3.</h2>
+                                <h3 class="card-title">BOOST YOUR BUSSINESS</h3>
+                            </div>
+                            
+                            <img src="assets/seller-dashboard/happy-selling-products-online-seller-600w-1037992996.webp" alt="Boost Your busieness"style="width: 100%;height: 60%;">
+                            
+                            <div class="card-block wrapper">
+                                <h5>Our responsibility is to make your bussiness more 
+                                successful and boost your bussiness.</h5>
+                            </div>
+                        </div>
+                        <!--Angular JS end-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Contact form-->
+        <section class="mb-4" id="contact">
+            <div class="container">
+                <h2 class="h1-responsive font-weight-bold text-center my-4">
+                    Update Your Details
+                </h2>
+
+                <h3 class="text-center w-responsive mx-auto mb-5">
+                    To Help Us Serve You Better.. 
+                </h3>
+
+                <div class="row">
+                    <div class="container pb-5">
+                        <div class="col-md-12">
+                            <form #bussinessDetailsForm (ngSubmit)="updateData()" [formGroup]="businessForm" >
+                                <div class="row">
+                                    <!--GSTIN-->
+                                    <div class="col-md-12">
+                                        <div >
+                                            <label for="name" class="">GSTIN</label>
+                                            <input type="text" class="form-control mb-2" #GSTIN [formControlName]="'GSTIN'" placeholder="GSTIN">
+                                        </div>
+                                    </div>
+                                    <!--GSTIN end-->
+                                </div>
+
+                                <!--Contact-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div >
+                                            <label for="subject" class="">Contact</label>
+                                            <input type="number" class="form-control mb-2" #contact [formControlName]="'contact'" placeholder="Contact">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Contact end-->
+
+                                <!--Address-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div >
+                                            <label for="message">Your Address</label>
+                                            <textarea type="text" class="form-control mb-2" #sellerAddress [formControlName]="'sellerAddress'" placeholder="Seller Address"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Address end-->
+
+                                <section class="form-row align-items-center">
+                                    <section class="col-auto">
+                                        <button type="submit" name="saveBtn" #saveBtn class="btn btn-primary mb-2">Save</button>
+                                    </section>
+                                </section>
+                                
+                                <p>{{greeting}}</p>
+                            </form>
+                            <!--Form end-->                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

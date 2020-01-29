@@ -1,0 +1,45 @@
+.error h3{
+    color: rgb(54, 53, 53);
+    margin-top: 3rem;
+}
+.error{
+    align-self: auto;
+    background-repeat: no-repeat;
+    margin: auto;
+    margin-top: 6.5rem;
+    background-size: 100%;
+    max-width: 100%; 
+}
+.error img{
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .error{
+        align-self: auto;
+        background-repeat: no-repeat;
+        margin: auto;
+        margin-top: 6.5rem;
+        background-size: 100%;
+        max-width: 100%; 
+    }
+	.error img{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+/************
+3. 425px
+************/
+
+@media only screen and (max-width: 425px)
+{
+	.error img{
+        width: 100%;
+        height: 100%;
+    }  
+}

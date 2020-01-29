@@ -1,0 +1,227 @@
+version: '2'
+
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8085:8085
+
+  config-server:
+    build: config-server/
+    container_name: config-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8888:8888
+
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - config-server
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    network_mode: host
+    volumes:
+      - $HOME/mongo:/data/db
+
+  best-deals:
+    image: best-deals-image
+    build: best-deals-service/
+    restart: always
+    network_mode: host
+    hostname: localhost
+    container_name: deals-demo
+    depends_on:
+      - mongo
+      - config-server
+    ports:
+      - 8086:8086
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    container_name: mysql-docker
+    network_mode: "host"
+    hostname: localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - $HOME/mysqldata:/var/lib/mysql
+
+  authentication-service:
+    build: authentication-service/
+    container_name: auth-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8105:8105
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+    container_name: zookeeper
+    network_mode: "host"
+    hostname: localhost
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    ports:
+      - "9092:9092"
+    container_name: kafka
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://localhost:9092"
+      KAFKA_LISTENERS: "PLAINTEXT://localhost:9092"
+      KAFKA_ZOOKEEPER_CONNECT: "localhost:2181"
+      KAFKA_ADVERTISED_HOST_NAME: "localhost"
+    hostname: localhost
+    network_mode: "host"
+    depends_on:
+      - zookeeper
+
+  seller-profile-service:
+    image: seller-profile-service
+    build: seller-profile-service/
+    container_name: seller-profile-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8088:8088"
+    depends_on:
+      - zookeeper
+      - kafka
+      - mongo
+      - eureka-server
+      - config-server
+      - api-gateway
+
+  neo4j:
+    image: neo4j:latest
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=none
+    volumes:
+      - ./plugins:/plugins
+      - ./data:/data
+      - ./import:/import
+
+  recomendation-service:
+    image: recomendation-image
+    build: recommendation-service/
+    container_name: recomendation-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8081:8081"
+    depends_on:
+      - neo4j
+      - api-gateway
+      - kafka
+      - seller-profile-service
+      - buyer-profile-service
+      - product-service
+
+  angular-frontend:
+    build: frontend/
+    hostname: localhost
+    ports:
+      - "4200:4200"
+    network_mode: "host"
+
+
+  product-service:
+    build: product-service/
+    container_name: product-service
+    hostname: localhost
+    network_mode: "host"
+    ports:
+      - "8095:8095"
+    depends_on:
+      - eureka-server
+      - mongo
+
+  buyer-profile-service:
+    image: buyer-profile-service
+    build: buyer-profile-service/
+    container_name: buyer-profile-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8090:8090"
+    depends_on:
+      - zookeeper
+      - kafka
+      - mongo
+      - eureka-server
+      - config-server
+      - api-gateway
+
+  order-service:
+    build: order-service/
+    container_name: order-service
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8100:8100"
+    depends_on:
+      - config-server
+      - eureka-server
+      - api-gateway
+      - mongo
+      - kafka
+
+  mapping-service:
+    build: buyer-To-seller-service/
+    container_name: mapping-service
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8120:8120"
+    depends_on:
+      - mongo
+      - kafka
+
+  payment-service:
+    image: payment-service
+    build: payment-service/
+    container_name: payment-service
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8200:8200"
+    depends_on:
+      - mysql
+

@@ -1,0 +1,19 @@
+id,nameGenre,parentnode,nodetype,nodeclass,parentrelation
+0,Mobile Phone,Electronics,subCategory,subCategory,hasA
+1,Laptop,Electronics,subCategory,subCategory,hasA
+2,Air Conditioner,Electronics,subCategory,subCategory,hasA
+3,Washing Machine,Electronics,subCategory,subCategory,hasA
+4,Speaker,Electronics,subCategory,subCategory,hasA
+5,Refrigerator,Electronics,subCategory,subCategory,hasA
+6,Camera,Electronics,subCategory,subCategory,hasA
+7,Home Audio,Electronics,subCategory,subCategory,hasA
+8,Electronic Watch,Electronics,subCategory,subCategory,hasA
+9,Horror,Books,subCategory,subCategory,hasA
+10,Romantic,Books,subCategory,subCategory,hasA
+11,Thriller,Books,subCategory,subCategory,hasA
+12,Self-Help,Books,subCategory,subCategory,hasA
+13,Comics,Books,subCategory,subCategory,hasA
+14,Sci-Fi,Books,subCategory,subCategory,hasA
+15,Fantasy,Books,subCategory,subCategory,hasA
+16,Drama,Books,subCategory,subCategory,hasA
+17,Poetry,Books,subCategory,subCategory,hasA

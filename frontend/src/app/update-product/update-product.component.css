@@ -1,0 +1,47 @@
+.container{
+    /* background-color: rgb(117, 112, 112); */
+    background: -webkit-linear-gradient(left, #aaadaa, #272726e8);
+    /* padding-bottom: 15px;
+    padding-top: 15px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.outer-container{
+    margin-top: 11%;
+    background-image: url("src/assets/home/footer.jpg");
+    background-size: cover;
+    background-position: 50% 50%;  
+    padding-top: 8%;
+    margin-bottom: -4%;
+    padding-bottom: 5%;
+}
+
+input{
+    width: 100%;
+}
+
+#form{
+    width: 50%;
+}
+/* .wrapper{
+    margin-bottom: 5px;
+} */
+
+.add{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section h3, p{
+    color: black;
+}
+
+p{
+    margin-top:50px;
+}
+
+

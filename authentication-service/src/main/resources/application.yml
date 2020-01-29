@@ -1,0 +1,36 @@
+server:
+  port: 8105
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 622910296888-2ceemejp379mm4bdjv4don9f303lid8k.apps.googleusercontent.com
+            clientSecret: fth4AhKhNeu7MDn4ddPgeL1I
+            accessTokenUri: https://graph.facebook.com/oauth/access_token
+            #userAuthorizationUri: https://www.facebook.com/dialog/oauth
+            redirectUriTemplate: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+          facebook:
+            clientId: 459182898138381
+            clientSecret2: a9d142113b1df37cca574646c1ba68b1
+            redirectUriTemplate2: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - public_profile
+
+        provider:
+          facebook:
+            authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
+            tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+            userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+  application:
+    name: authentication-service
+
+authorizedRedirectUris:
+  - http://localhost:3000/oauth2/redirect
+  - myandroidapp://oauth2/redirect
+  - myiosapp://oauth2/redirect

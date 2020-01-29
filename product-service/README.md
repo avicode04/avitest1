@@ -1,0 +1,1 @@
+This microservice saves the products given by sellers and send product to deals service and another service via kafka.

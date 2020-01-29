@@ -1,0 +1,152 @@
+<div class="wrapper">
+    
+    <table>
+        <ng-container *ngFor="let incart of incartProductArray">
+            <!-- <tr class="table-dark">
+                <td>{{incart.productBrandName}}</td>
+                <td>{{incart.productCategory}}</td>
+                <td>{{incart.productDescription}}</td>
+                <td>{{incart.productName}}</td>
+                <td>{{incart.productPrice}}</td>
+            </tr> -->
+        </ng-container>
+        
+        <div>
+            <br><br>
+        </div>
+    </table>
+    
+    <!-- top Products -->
+    <div class="ads-grid_shop">
+        <div class="shop_inner_inf">
+            <div class="privacy about">
+                <h3>Checkout</h3>
+
+                <div class="checkout-right">
+                    <!-- <h4>Your shopping cart contains: <span>3 Products</span></h4> -->
+                    <table class="timetable_sub">
+                        <thead>  
+                            <tr>
+                                <th>SL No.</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        
+                        <ng-container *ngFor="let incart of incartProductArray">
+                     
+                            <tbody>
+                                <tr class="rem1">
+                                    <td class="invert">{{serialNumber()}}</td>
+                                    
+                                    <td class="invert-image"><a href="single.html">
+                                        <img src="https://images-na.ssl-images-amazon.com/images/I/61FRLa8IFTL._SX569_.jpg" alt=" " class="img-responsive"></a>
+                                    </td>
+                                    
+                                    <td class="invert">
+                                        <div class="quantity">
+                                            <div class="quantity-select">
+                                                <div class="entry value-minus" (click)="decrease(incart)">&nbsp;</div>
+                                                <div class="entry value"><span>{{incart.productQuantityIncart}}</span>
+                                                </div>
+                                                <div class="entry value-plus active" (click)="increase(incart)">&nbsp;
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="invert">{{incart.productName}}</td>
+
+                                    <td class="invert">Rs.{{addPrice(incart)}}</td>
+                                    
+                                    <td class="invert">
+                                        <div class="rem">
+                                            <i class="fa fa-trash-o" (click)="onDelete(incart.$key)" style="font-size:24px"></i>
+                                            <div class="close1"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </ng-container>
+                    </table>
+                    
+                    <div class="checkout-left">
+                        <!-- <button type="button" id="trigger">Check Total</button> -->
+                        
+                        <div class="col-md-4 checkout-left-basket">               
+                            <!-- <ng-container *ngFor="let incart of incartProductArray"> 
+                            <ul>
+                                <li>
+                                    {{incart.productName}} <i>:</i> <span>Rs.{{incart.productPrice}} </span>
+                                </li>  
+                            </ul> -->
+                            <!-- </ng-container> -->
+                            <hr>
+                            <ul>
+                                <li>
+                                    Total <i>:</i> <span>Rs.{{getTotal()}}</span>
+                                </li>
+                            </ul>
+                            
+                            <div id="pay">
+                                <a class="btn btn-secondary btn-block" type="button" (click)="goToPayment()"><span style="color: white;">Make Payment</span></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 address_form">
+                            <h4>Add a new Details</h4>
+                            
+                            <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+                                <section class="creditly-wrapper wrapper">
+                                    <div class="information-wrapper">
+                                        <div class="first-row form-group">
+                                            <div class="controls">
+                                                <label class="control-label">Full name: </label>
+                                                <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                                            </div>
+                                            
+                                            <div class="card_number_grids">
+                                                <div class="card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label">Mobile number:</label>
+                                                        <input class="form-control" type="text" placeholder="Mobile number">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="card_number_grid_right">
+                                                    <div class="controls">
+                                                        <label class="control-label">Landmark: </label>
+                                                        <input class="form-control" type="text" placeholder="Landmark">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="clear"></div>
+                                            </div>
+                                            
+                                            <div class="controls">
+                                                <label class="control-label">Town/City: </label>
+                                                <input class="form-control" type="text" placeholder="Town/City">
+                                            </div>
+                                            
+                                           
+                                        </div>
+                                        <button class="submit check_out">Delivery to this Address</button>
+                                    </div><!--information-wrapper-- End -->
+                                </section><!--creditly-wrapper wrapper-- End -->
+                            </form>                       
+                        </div><!--col-md-8 address_form-- End -->      
+                        
+                        <div>
+                            <ng-container *ngFor="let incart of incartProductArray">
+                            </ng-container>
+                        </div>
+                    </div><!--checkout-left-- End -->
+                </div><!--checkout-right-- End -->
+            </div><!--privacy about-- End -->
+        </div><!--shop_inner_inf-- End -->
+    </div><!--ads-grid_shop-- End -->
+</div><!--wrapper-- End -->
+                    

@@ -1,0 +1,23 @@
+.navbar-custom {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-font {
+    color: black;
+    font-weight: 500;
+}
+
+.form {
+    min-width: 40px;
+    max-width: 150px;
+    width: 100%;
+}
+  
+.full-width {
+    width: 100%;
+}

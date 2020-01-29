@@ -1,0 +1,41 @@
+<section class="outer-container">
+    <section class="container">
+        <h3 class="mt-2 pt-1 mb-4">Update An Existing Product!</h3>
+
+        <input id="form" type="text" placeholder="Search Product" #name>
+
+        <!--end of col-->
+        <button class="btn btn-info" type="submit" (click)="doSearch(name.value)"> <i class="fa fa-search"></i>
+        </button>
+        <!--end of col-->
+        <!-- </form>     -->
+        <section *ngIf="valueSearch">
+            <h3>{{product.productName}}</h3>
+            <p>{{desc}}</p>
+        </section>
+        <section *ngIf="productDoesntExists">
+            <h3>The product does not exist in our database.
+                Please click on the add new product button</h3>
+        </section>
+        <section *ngIf="valueSearch">
+            <form [formGroup]="updateForm">
+                <mat-form-field>
+                    <input matInput type="number" formControlName="price" id="input1"
+                        placeholder="Enter Price in Rupees" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                    <input matInput type="number" formControlName="quantity" id="input2" placeholder="Enter Quantity"
+                        required>
+                </mat-form-field>
+                <section class="wrapper">
+                    <button class="btn btn-primary" (click)="doUpdate()">Submit</button>
+                </section>
+            </form><br>
+        </section>
+        <p>-----OR-----</p>
+        <section class="add">
+            <button class="btn btn-success" (click)="goToAdd()">Add a New Product!</button>
+        </section>
+        <!--end of col-->
+    </section>
+</section>

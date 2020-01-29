@@ -1,0 +1,38 @@
+<br><br>
+<div class="container">
+    
+    <section class="row">
+        <div *ngIf = "isData; else error_content">
+        <div *ngIf = "isCheckedMore; else other_content" >
+            <div *ngFor = "let product of products| slice:0:1" class="col-md-4 " style="margin-top: 10px;">
+                <div class="card text-center" style="background: rgba(255,255,255, 0.12)">
+                    <img class="card-img-top" src="https://johnlewis.scene7.com/is/image/JohnLewis/238136494?$rsp-pdp-port-1440$" alt="Card image cap" style="height: 30rem;">
+                        <div class="card-body">
+                            <h3>Price: {{product.productPrice}} </h3>
+                            <button (click) = "goToProduct(product.sellerId)" class="btn btn-dark">Know More</button>
+                        </div>
+                </div>
+            </div>
+            <button (click) = "checkMore()" class="btn btn-dark">Check for More</button>
+        </div>
+    <ng-template #other_content>
+        <div *ngFor = "let product of products" class="col-md-4 " style="margin-top: 10px;">
+            <div class="card text-center" style="background: rgba(255,255,255, 0.12)">
+                <img class="card-img-top" src="https://johnlewis.scene7.com/is/image/JohnLewis/238136494?$rsp-pdp-port-1440$" alt="Card image cap" style="height: 30rem;">
+                    <div class="card-body">
+                        <h3>Price: {{product.productPrice}} </h3>
+
+                        <button (click) = "goToProduct(product.sellerId)" class="btn btn-dark">Know More</button>
+                    </div>
+            </div>
+        </div>
+        <button (click) = "checkMore()" class="btn btn-dark">Check for Less</button>
+    </ng-template>
+    </div>
+    <ng-template #error_content>
+        <div class="error">
+            <img src="assets/seller-dashboard/no-magento-product-found.jpg" alt="Product Not found" />
+        </div>
+    </ng-template>
+    </section>
+</div>

@@ -1,0 +1,56 @@
+.container{
+    /* background-color: rgb(117, 112, 112); */
+    background: -webkit-linear-gradient(left, #aaadaa, #272726e8);
+    /* padding-bottom: 15px;
+    padding-top: 15px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.outer-container{
+    margin-top: 11%;
+    background-image: url("src/assets/home/footer.jpg");
+    background-size: cover;
+    background-position: 50% 50%;  
+    padding-top: 8%;
+    margin-bottom: -4%;
+    padding-bottom: 5%;
+}
+
+.mat-horizontal-stepper{
+    background: -webkit-linear-gradient(left, #aaadaa, #272726e8);
+}
+
+.container h3 {
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+    font-weight: bold;
+}
+
+ng-template{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+mat-form-field{
+    width: 50%;
+}
+
+button{
+    padding:5px;
+    margin: 5px;
+}
+
+.btn-primary{
+    background-color: rgb(189, 190, 190);
+}
+
+.btn-danger{
+    background-color: rgb(131, 131, 131);
+}
+
+.btn-success{
+    background-color: rgb(32, 32, 32);
+}

@@ -1,0 +1,99 @@
+<div class="outer-container">
+    <section class="container">
+        <h3>Add a new Product!</h3>
+        <mat-horizontal-stepper [linear]="false" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Please select a category and a sub-category</ng-template>
+              <mat-form-field>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category1">
+                  <mat-option *ngFor="let category of category" [value]="category.value" (click)="getCat()" #cat>
+                    {{category.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field><br>
+              <mat-form-field>
+                <mat-label>Sub-Category</mat-label>
+                <div *ngIf="isElectronic; then ifBlock; else elseBlock"></div>
+                <ng-template #ifBlock>
+                  <mat-select formControlName="subcategory">
+                    <mat-option *ngFor="let ele of eleCat" [value]="ele.value" #eSubcat>
+                      {{ele.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </ng-template>
+                <ng-template #elseBlock>
+                  <mat-select formControlName="subcategory">
+                    <mat-option *ngFor="let genre of genres" [value]="genre.value" #bSubcat>
+                      {{genre.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </ng-template>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext class="btn btn-success">Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <div *ngIf="isElectronic; then ifBlock1; else elseBlock1"></div>
+            <ng-template #ifBlock1>
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Please provide Specifics of the Product</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Name" formControlName="name" required #eName>
+                </mat-form-field><br>
+                <mat-form-field>
+                  <input matInput placeholder="Description" formControlName="description" required #eDesc>
+                </mat-form-field><br>
+                <app-file-upload></app-file-upload>
+                <div>
+                  <button mat-button matStepperPrevious class="btn btn-primary">Back</button>
+                  <button mat-button matStepperNext class="btn btn-success">Next</button>
+                </div>
+              </form>
+            </ng-template>
+            <ng-template #elseBlock1>
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Please provide specifics of the Product</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Book Title" formControlName="title" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                  <input matInput placeholder="Description" formControlName="description" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                  <input matInput placeholder="ISBN number" formControlName="isbn" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                  <input matInput placeholder="Author" formControlName="author" required>
+                </mat-form-field><br>
+                <mat-form-field>
+                  <input matInput placeholder="Publisher" formControlName="publisher" required>
+                </mat-form-field><br>
+                <app-file-upload></app-file-upload>
+              </form>
+            </ng-template>
+          </mat-step>
+      
+          <mat-step>
+            <ng-template matStepLabel>Provide the amount of the Product and it's price</ng-template>
+            <form [formGroup]="fourthFormGroup">
+              <mat-form-field>
+                <input matInput placeholder="Qauntity" formControlName="quantity" type="number" required #eQuant>
+              </mat-form-field><br>
+              <mat-form-field>
+                <input matInput placeholder="Price in Rupees" formControlName="price" type="number" required>
+              </mat-form-field><br>
+              <div>
+                <button mat-button matStepperPrevious class="btn btn-primary ">Back</button>
+                <button mat-button (click)="stepper.reset()" class="btn btn-danger ">Reset</button>
+                <button mat-button (click)="takeInfoProduct()" class="btn btn-success ">Submit</button>
+              </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </section>
+</div>
+

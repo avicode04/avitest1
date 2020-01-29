@@ -1,0 +1,79 @@
+<section class="container register mt-5">
+    <hr>
+    <hr>
+    <div class="row">
+        <!-- Login Option -->
+        <div class="col-lg register-left">
+            <img src="assets/seller-registration/logo3.png" alt="logo" />
+            <h3>Welcome</h3>
+            <input type="submit" routerLink="/login-page" name="" value="Login" /><br/>
+        </div>
+        <!-- Login Option -- End-->
+
+        <!-- Registration Form -->
+        <div class="col-md-9 register-right mr-2">
+            <div class="tab-content" id="myTabContent">
+                <h3 class="register-heading">Sign Up</h3>
+
+                <div class="row register-form">
+                    <div class="col-md-12">
+                        <form (ngSubmit)="addBuyer()" [formGroup]="registrationForm">
+                            <!--Email Input Field-->
+                            <!-- <div class="form-field"> -->
+                            <input #email type="text" class="form-control form-field" [formControlName]="'Email'" [ngClass]="{'is-invalid':registrationForm.get('Email').touched && registrationForm.get('Email').invalid}" placeholder="Email *" value="" />
+                            <!-- </div> -->
+                            <!--Invalid Email Input Field Messages-->
+                            <div *ngIf="registrationForm.get('Email').touched && registrationForm.get('Email').invalid" class="invalid-feedback">
+                                <div *ngIf="registrationForm.get('Email').errors.required">An email is required...</div>
+                                <div *ngIf="registrationForm.get('Email').errors.email">The email should be a valid email address...</div>
+                            </div>
+                            <!--Name Input Field-->
+                            <!-- <div class="form-field"> -->
+                            <input #name type="text" class="form-control form-field" [formControlName]="'Name'" [ngClass]="{'is-invalid':registrationForm.get('Name').touched && registrationForm.get('Name').invalid}" placeholder="Name *" value="" />
+                            <!-- </div> -->
+                            <!--Invalid Name Input Field Messages-->
+                            <div *ngIf="registrationForm.get('Name').touched && registrationForm.get('Name').invalid" class="invalid-feedback">
+                                <div *ngIf="registrationForm.get('Name').errors.required">A Name is required...</div>
+                            </div>
+                            <!--Phone Input Field-->
+                            <!-- <div class="form-field"> -->
+                            <input #phone type="number" class="form-control form-field" [formControlName]="'Phone'" [ngClass]="{'is-invalid':registrationForm.get('Phone').touched && registrationForm.get('Phone').invalid}" placeholder="Phone *" value="" />
+                            <!-- </div> -->
+                            <!--Invalid Phone Input Field Messages-->
+                            <div *ngIf="registrationForm.get('Phone').touched && registrationForm.get('Phone').invalid" class="invalid-feedback">
+                                <div *ngIf="registrationForm.get('Phone').errors.required">A Phone is required...</div>
+                                <div *ngIf="registrationForm.get('Phone').errors.min">The phone should be at least 10 digits long...</div>
+                                <div *ngIf="registrationForm.get('Phone').errors.max">The phone should be at most 10 digits long...</div>
+                            </div>
+                            <!--Password Input Field-->
+                            <!-- <div class="form-field"> -->
+                            <input #password type="password" class="form-control form-field" [formControlName]="'Password'" [ngClass]="{'is-invalid':registrationForm.get('Password').touched && registrationForm.get('Password').invalid}" placeholder="Password *" value="" />
+                            <!-- </div> -->
+                            <!--Invalid Password Input Field Messages-->
+                            <div *ngIf="registrationForm.get('Password').touched && registrationForm.get('Password').invalid" class="invalid-feedback">
+                                <div *ngIf="registrationForm.get('Password').errors.required">A password is required...</div>
+                                <div *ngIf="registrationForm.get('Password').errors.minlength">The password must be at least 8 characters long...</div>
+                                <div *ngIf="registrationForm.get('Password').errors.maxlength">The password must be at most 16 characters long...</div>
+                            </div>
+                            <!--Register button-->
+                            <div class="col-md-12">
+                                <button (click)="signInWithGoogle()" class="btn btn-social-icon btn-google mx-1">
+                                    <span  class="fa fa-google"></span>
+                                 </button>
+                                <button (click)="signInWithFB()" class="btn btn-social-icon btn-facebook mx-1">
+                                    <span class="fa fa-facebook"> </span>
+                                 </button>
+                                <button type="submit" class="btnRegister" routerLink="/login-page" (click)="addBuyer(email.value,name.value,phone.value,password.value)">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- .'col-md-12' div -- End-->
+                </div>
+                <!-- .'row register-form' div -- End-->
+            </div>
+            <!-- .'tab-content' div -- End-->
+        </div>
+        <!-- Registration Form -- End-->
+    </div>
+    <!-- row -- End-->
+</section>

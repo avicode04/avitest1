@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "promotag": "Lenovo",
+      "promodesc": "Outdated",
+      "promoimg": "/assets/trendingDeals/m2.png"
+    },
+    {
+      "id": "2",
+      "promotag": "Samsung",
+      "promodesc": "Highest market cap",
+      "promoimg": "/assets/trendingDeals/m1.png"
+    },
+    {
+      "id": "3",
+      "promotag": "Apple",
+      "promodesc": "Overpriced",
+      "promoimg": "/assets/trendingDeals/m4.png"
+    },
+    {
+      "id": "4",
+      "promotag": "Mi",
+      "promodesc": "Buy bomb this diwali",
+      "promoimg": "/assets/trendingDeals/m3.png"
+    }
+  ]
+}

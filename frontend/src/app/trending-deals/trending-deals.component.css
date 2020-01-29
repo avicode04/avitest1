@@ -1,0 +1,34 @@
+.carousel-inner img {
+    width: 189px;
+    height: 350px;
+}
+
+.col-md-4 {
+    float: right;
+}
+
+.carousel slide carousel-multi-item {
+    background-color: rgb(150, 247, 126);
+    padding-bottom: 5%;
+}
+
+.trending-heading {
+    background-color: rgb(150, 247, 126);
+    text-align: center;
+    align-self: auto;
+    padding: 2rem;
+}
+
+.deals {
+    background-color: rgb(150, 247, 126);
+}
+
+.card-img-top img-thumbnail {
+    border-color: rgb(150, 247, 126);
+    border-width: 0;
+}
+
+.card-body {
+    background-color: rgb(150, 247, 126);
+}
+

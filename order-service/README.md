@@ -1,0 +1,1 @@
+This microservice saves the orders given by users and send order to mapping service via kafka and then receive refined order by mapping service.

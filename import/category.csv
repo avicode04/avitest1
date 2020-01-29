@@ -1,0 +1,3 @@
+id,name,parentnodeid,nodetype,nodeclass,parentrelation
+1,Electronics,1,category,category,category
+2,Books,2,category,category,category

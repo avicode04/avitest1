@@ -1,0 +1,52 @@
+{
+  "buyers": [
+    {
+      "buyerEmail": "vishal@gmail.com",
+      "buyerName": "vishal",
+      "buyerImage": "/fofojojojjdiddcnubadpoe",
+      "buyerGender": "Male",
+      "buyerPhone": 7038274402,
+      "buyerAddress": "No. 21, Hosur Rd, Chikku Lakshmaiah Layout, Koramangala, Bengaluru, Karnataka 560095",
+      "incartProducts": [
+        {
+          "productId": "3745147TE",
+          "productPrice": 3999,
+          "productQuantity": 1
+        },
+        {
+          "productId": "1235417TE",
+          "productPrice": 599,
+          "productQuantity": 1
+        },
+        {
+          "productId": "1235417TE",
+          "productPrice": 599,
+          "productQuantity": 1
+        },
+        {
+          "productId": "1235417TE",
+          "productPrice": 599,
+          "productQuantity": 1
+        }
+      ],
+      "buyerHomeAddress": "No. 21, Hosur Rd, Chikku Lakshmaiah Layout, Koramangala, Bengaluru, Karnataka 560095, jai ho",
+      "buyerDob": "2019-10-19"
+    },
+    {
+      "buyerEmail": "Deepak@gmail.com",
+      "buyerName": "Deepak",
+      "buyerImage": "/fofojojojdcnubadpoe",
+      "buyerGender": "Male",
+      "buyerDob": "23rd october 1996",
+      "buyerPhone": 7030777334,
+      "buyerAddress": "jharia,Dhanbad, jharkhand pin-828111",
+      "incartProducts": [
+        {
+          "productId": "374563UE",
+          "productPrice": 999,
+          "productQuantity": 1
+        }
+      ]
+    }
+  ]
+}

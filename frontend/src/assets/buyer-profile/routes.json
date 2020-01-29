@@ -1,0 +1,7 @@
+{
+    "/buyers/list": "/buyers",
+    "/buyers/get/buyerEmail": "/buyers/buyerEmail",
+    "/buyers/create": "/buyers",
+    "/buyers/update/buyerEmail": "/buyers/buyerEmail",
+    "/buyers/delete/buyerEmail": "/buyers/buyerEmail"
+}  

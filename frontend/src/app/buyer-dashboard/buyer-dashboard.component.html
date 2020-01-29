@@ -1,0 +1,111 @@
+<mat-drawer-container class="main-container">
+
+  <mat-drawer-content>
+    <section class="container mt-4">
+
+      <button mat-raised-button (click)="gotToBuyerProfile()">Profile</button>
+
+      <br><br>
+      <app-search-bar> </app-search-bar>
+      
+      <h2>Trending Deals</h2>
+      <!-- 
+      <div *ngFor="let r of recomm">
+        <h1>{{r.id}}</h1>
+        <h1>{{r.promotag}}</h1>
+        <h4>{{r.promodesc}}</h4>
+      </div> -->
+    
+      <div id="carousel-recommendation" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div id="firstSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="src/assets/buyer-dashboard/howard-lawrence-b-RSCirJ70NDM-unsplash.jpg" alt="First slide"> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="secondSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="../../assets//buyer-dashboard/promotional-image2.jpg" alt="Second slide"> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="thirdSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="https://mgrconsultinggroup.com/wp-content/uploads/Lightning_Deals-600x360.jpg" alt="Third slide"> -->
+            </div>
+          </div>
+        </div>
+    
+        <a class="carousel-control-prev" href="#carousel-recommendation" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-recommendation" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+      </div>
+    
+      <h2>Recommendations Tailored For You</h2>
+      <div id="carousel-recommendation" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div id="fourthSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="src/assets/buyer-dashboard/howard-lawrence-b-RSCirJ70NDM-unsplash.jpg" alt="First slide"> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="fifthSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="../../assets//buyer-dashboard/promotional-image2.jpg" alt="Second slide"> -->
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div id="sixthSlide" class="img img-fluid">
+              <!-- <img class="d-block img-fluid" src="https://mgrconsultinggroup.com/wp-content/uploads/Lightning_Deals-600x360.jpg" alt="Third slide"> -->
+            </div>
+          </div>
+        </div>
+    
+        <a class="carousel-control-prev" href="#carousel-recommendation" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-recommendation" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+      </div>
+    
+      <!-- <div class="slider">
+        <div ng2-carouselamos [width]="900" [items]= "recomm" [$item]="itemTemplate"
+        [$prev]="prevTemplate" [$next]="nextTemplate"
+        (onSelectedItem)="selectedItem = $event.item; selectedIndex = $event.index">
+        </div>
+        
+        <ng-template #prevTemplate>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </button>
+        </ng-template>
+        
+        <ng-template #nextTemplate>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </ng-template>
+        
+        <ng-template let-item let-i="index" #itemTemplate>
+          <div style="min-width: 300px">
+            <div class="card" style="width: 50rem">
+              <img [src]="item.promoimg" class="card-img-top" alt="shooperZoid">
+              <div class="card-body">
+                <h5 class="card-title">{{item.promotag}}</h5>
+                <p class="card-text">{{item.promodesc}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div> -->
+    </section>
+  </mat-drawer-content>
+</mat-drawer-container>

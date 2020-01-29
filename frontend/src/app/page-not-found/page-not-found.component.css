@@ -1,0 +1,93 @@
+.container {
+    /* background-image: url(src/assets/logo.jpg); */
+    background: url(src/assets/home/footer.jpg);
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-top: 6%;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(54, 53, 53);
+    padding-top:20%;
+    padding-bottom: 20%;
+    color: black;
+}
+
+/************
+1. 1440px
+************/
+
+@media only screen and (max-width: 1440px)
+{
+	.container {
+        /* background-image: url(src/assets/logo.jpg); */
+        background: -webkit-linear-gradient(left, #919692, #272726e8);
+        background-size: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-top: 8%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        margin-bottom: -6%;
+    }
+}
+
+/************
+2. 1024px
+************/
+
+@media only screen and (max-width: 1024px)
+{
+	.container {
+        /* background-image: url(src/assets/logo.jpg); */
+        background: -webkit-linear-gradient(left, #919692, #272726e8);
+        background-size: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-top: 12%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        margin-bottom: -6%;
+    }
+}
+
+/************
+3. 768px
+************/
+
+@media only screen and (max-width: 768px)
+{
+	.container {
+        /* background-image: url(src/assets/logo.jpg); */
+        background: -webkit-linear-gradient(left, #919692, #272726e8);
+        background-size: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-top: 16%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        margin-bottom: -8%;
+    }
+}
+
+/************
+4. 425px
+************/
+
+@media only screen and (max-width: 425px)
+{
+	.container {
+        /* background-image: url(src/assets/logo.jpg); */
+        background: -webkit-linear-gradient(left, #919692, #272726e8);
+        background-size: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        margin-top: 28%;
+        padding-bottom: 8%;
+        padding-top: 8%;
+        margin-bottom: -16%;
+    }
+}

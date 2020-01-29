@@ -1,0 +1,145 @@
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Account Setting </div>
+        <div class="list-group list-group-flush">
+        <a (click)="goToSellerDashboard()" class="list-group-item list-group-item-action bg-light">Home</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Catalogue</a>
+        <a (click)="goToInventory()" class="list-group-item list-group-item-action bg-light">Inventory</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Pricing</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Orders</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Performance</a>
+        <a routerLink="seller-dashboard" class="list-group-item list-group-item-action bg-light">Help</a>
+        <a routerLink="login-page" class="list-group-item list-group-item-action bg-light">Logout</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="goToSellerDashboard()" data-toggle="collapse" data-target=".navbar-collapse.show">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Catalogue</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" (click)="goToInventory()" data-toggle="collapse" data-target=".navbar-collapse.show">Inventory</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Orders</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Performance</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="/" data-toggle="collapse" data-target=".navbar-collapse.show">Help</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" routerLink="login-page" data-toggle="collapse" data-target=".navbar-collapse.show">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            <!--Seller Dashboard Inventory View-->
+            <section class="container">
+                <h3 class="mt-2 pt-1 mb-4">Inventory</h3>
+                
+                <!--Inventory Summary-->
+                <section class="row mb-3">
+                    <p>Total Items in the Inventory: {{InStock}}</p>
+                </section>
+            
+                <!--Update Item Button-->
+                <!-- <section class="row mb-3">
+                    <form>
+                        <button type="button" class="btn btn-secondary" (click)="updateProduct()">Update Item</button>
+                    </form>
+                </section> -->
+            
+                <!--Relevant Data section-->
+                <section class="row">
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                            <!--- Note that these columns can be defined in any order.
+                            The actual rendered columns are set as a property on the row definition" -->
+                            
+                            <!-- Product Name Column -->
+                            <ng-container matColumnDef="productName">
+                                <th mat-header-cell *matHeaderCellDef> Product Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+                            </ng-container>
+                            
+                            <!-- Product Image Column -->
+                            <ng-container matColumnDef="productImage">
+                                <th mat-header-cell *matHeaderCellDef> Product Image </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productImage}} </td>
+                            </ng-container>
+                            
+                            <!-- Product Description Column -->
+                            <ng-container matColumnDef="productDescription">
+                                <th mat-header-cell *matHeaderCellDef> Product Description </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productDescription}} </td>
+                            </ng-container>
+                            
+                            <!-- Product Category Column -->
+                            <ng-container matColumnDef="productCategory">
+                                <th mat-header-cell *matHeaderCellDef> Product Category </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productCategory}} </td>
+                            </ng-container>
+            
+                            <!-- Product Subcategory Column -->
+                            <ng-container matColumnDef="productSubcategory">
+                                <th mat-header-cell *matHeaderCellDef> Product Subcategory </th>
+                                <td mat-cell *matCellDef="let element"> {{element.productSubcategory}} </td>
+                            </ng-container>
+
+                            <!-- Edit Product Column -->
+                            <ng-container matColumnDef="editProduct">
+                                <th mat-header-cell *matHeaderCellDef> Edit Your Product </th>
+                                <td mat-cell *matCellDef="let element"> <button class="btn btn-dark" (click)="editProduct(element.productName)"> Edit </button> </td>
+                            </ng-container>
+                            
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    <!-- <div style="display: block">
+                        <canvas mdbChart
+                            [chartType]="chartType"
+                            [datasets]="chartDatasets"
+                            [labels]="chartLabels"
+                            [colors]="chartColors"
+                            [options]="chartOptions"
+                            [legend]="true"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div> -->
+                </section>
+            
+                <!--Add Item Button-->
+                <section class="row mt-3 pb-3">
+                    <form>
+                        <button type="button" class="btn btn-primary" (click)="addProduct()">Add Item</button>
+                    </form>
+                </section>
+            </section>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+    
+    
